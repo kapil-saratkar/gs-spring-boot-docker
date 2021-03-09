@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksnew-aa01"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksnew-aa01"
+  template:
+    metadata:
+      labels:
+        app: "aksnew-aa01"
+    spec:
+      containers:
+        - name: "aksnew-aa01"
+          image: "ask19.azurecr.io/aksnew"
+          ports:
+          - containerPort: 80
